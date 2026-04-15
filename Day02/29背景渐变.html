@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 249px;
+            height: 100px;
+            /*background-color: pink;*/
+
+            /*这是具体方向 to top,to right 等等*/
+            /*background: linear-gradient(to top, burlywood,red);*/
+
+            /*还可以添加角度*/
+            /*这个就是类似时钟的方式 12点表示0度 或者 360度 */
+            /*background: linear-gradient(45deg, burlywood,red);*/
+
+            /*这个是添加一个色标的位置*/
+            /*表示两个色标 from(色标) to(色标) */
+            background: linear-gradient(45deg, burlywood 20%,red 50%);
+        }
+        .text {
+            font-size: 30px;
+            font-weight: 700;
+            /*这个是一个文字渐变的效果*/
+            background: linear-gradient(to right,green,red) ;
+
+            /*必须设置这个文字才有渐变的效果*/
+            /*这个是针对谷歌的*/
+            -webkit-background-clip: text;
+            /*背景裁剪*/
+            background-clip: text;
+            /*这个是文本填充颜色,为透明*/
+            -webkit-text-fill-color: transparent;
+        }
+        button {
+            background: linear-gradient(to right, red ,pink);
+        }
+        .sa {
+            width: 249px;
+            height: 100px;
+            /*background: radial-gradient(red ,pink);*/
+            /*circle: 创建一个圆形的渐变。
+              ellipse: 创建一个椭圆形的渐变（这是默认值）。如果容器是正方形，circle 和 ellipse 的效果看起来会一样。*/
+            background: radial-gradient(red 30%, green 60%, blue 90%);
+        }
+    </style>
+</head>
+<body>
+<!--
+    在CSS中可以通过linear-gradient(线性渐变)和radial-gradient(茎向渐变) 为元素添加渐变背景
+        场景:
+            1. 文字底色渐变或者动画,跟家吸引用户
+            2. 盒子添加更加的美观
+-->
+
+<div class="box"></div>
+<div class="text">我是渐变的文字,你喜欢吗</div>
+<div class="sa">我是茎向渐变的文字,你喜欢吗</div>
+<button>搜索</button>
+</body>
+</html>

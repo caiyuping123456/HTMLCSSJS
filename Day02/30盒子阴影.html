@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 0 auto;
+            /*
+                Y轴偏移量向上是负的
+                X轴偏移量向左是负的
+            */
+            /*box-shadow: 60px -10px 10px 10px rgba(0,0,0,0.5);*/
+
+            /*这个是过度动画,表示慢慢进行转移 平滑*/
+            transition: .5s;
+        }
+
+        .a:hover {
+            box-shadow:20px -10px 10px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+<!--
+        盒子阴影的使用场景:
+            1. 盒子添加阴影,效果更加立体
+            2. 鼠标经过元素显示阴影,突出元素
+
+        语法:
+            box-shadow:X轴偏移量,Y轴偏移量,模糊半径,扩散半径,颜色
+            X轴偏移量,Y轴偏移量必须要写的
+           默认是外阴影,使用内阴影要使用inset
+
+-->
+
+<div class="a">
+
+</div>
+</body>
+</html>

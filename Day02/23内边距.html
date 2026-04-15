@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            /*    设置内边距*/
+            /*这个表示是这个盒子的内边距*/
+            /*
+                一个值表示: 上下左右
+                两个值表示: 左右 上下
+                三个值表示: 上 左右 下
+                四个值表示: 上 下 左 右
+            */
+            padding-top: 100px;
+        }
+        .in {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .title {
+            margin-top: 30px;
+            width: 240px;
+            height: 37px;
+            border: 1px solid white;
+            border-top: 2px solid orange;
+            line-height: 35px;
+            padding-left: 14px;
+        }
+    </style>
+</head>
+<body>
+<!--通过padding进行设置
+    就是内容到边框border的距离
+    顺时针,第一值是上
+-->
+<div class="out">
+    <div class="in">
+
+    </div>
+</div>
+<div class="title">
+    新浪案例
+</div>
+</body>
+</html>

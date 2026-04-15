@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "42310222",
+      "name": "publish",
+      "font_class": "publish",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}

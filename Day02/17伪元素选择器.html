@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*::first-line 表示首行*/
+        p:first-line {
+            color: red;
+        }
+
+        /* ::first-letter 表示首字母*/
+        p::first-letter {
+            color: green;
+            font-size: 50px;
+        }
+
+        /* ::placholder 表示占位的符号*/
+        textarea::placeholder {
+            color: skyblue;
+            font-size: 20px;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            background-color: pink;
+        }
+        .box::before {
+            content: "我";
+            color: red;
+        }
+        .box::after {
+            content: "是帅哥";
+            color: skyblue;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--伪元素：让表单里面的placholder文字变色，做很多修饰效果-->
+<!--
+    选择特定状态的
+        ::first-line 表示首行
+        ::first-letter 表示首字母
+        ::placholder 表示占位的符号
+    常用的特定部分：
+        ::before 表示元素内插入的伪元素，作为第一个元素
+        ::after 表示元素内插入的伪元素，作为最后一个元素
+       这个时类似内联元素
+       content必须要有，不能省略
+       后期非常常用，比如小图标，各种装饰效果
+-->
+<p>
+    sdgujdfgudgfudfuidgfud
+    sdsrarafa
+    aararadaerafdfd
+    afarafafayugauiashviasuias
+    adfuifahiadhfiodiodfid
+    dfhdivhdfuvdhfuvdhuvdgf
+</p>
+
+<textarea name="" id="" placeholder="请你留言"></textarea>
+
+<div class="box">
+cai
+</div>
+</body>
+</html>

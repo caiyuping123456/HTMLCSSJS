@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*设置成一半便是圆形*/
+            border-radius: 40px;
+        }
+        .b {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            /*设置成一半便是圆形*/
+            border-radius: 10px;
+        }
+        .c {
+        /*    胶囊按钮是最低的一半就可以实现*/
+            width: 200px;
+            height: 40px;
+            background-color: red;
+            /*设置成一半便是圆形*/
+            border-radius: 20px;
+        }
+        .f {
+        /*    图片页可以设置圆角*/
+            width: 200px;
+            height: 100px;
+            /*设置成一半便是圆形*/
+            border-radius: 20px;
+        }
+        .d {
+        /*    同时可以单一设置一个圆角 是顺时针: 左上-> */
+        /*    可以设置1 2 3 4个值*/
+            width: 200px;
+            height: 40px;
+            background-color: yellowgreen;
+            border-radius: 10px 0 10px 0;
+        }
+        .aa {
+            height: 100px;
+            width: 100px;
+            border-radius: 20px;
+        }
+        .bb {
+            height: 100px;
+            width: 100px;
+            /*左上,右下是20 */
+            border-radius: 20px 10px;
+        }
+        .cc {
+            height: 100px;
+            width: 100px;
+            border-radius: 20px 10px 30px;
+        }
+        .dd {
+            height: 100px;
+            width: 100px;
+            border-radius: 20px 30px 10px 40px;
+        }
+
+    /*
+        原理:
+            就是内部画园,重叠的就会保留
+
+    */
+    </style>
+</head>
+<body>
+<!--对于圆角边框可以使用 border-redius进行设置
+
+-->
+<button ></button>
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<img src="../images/2.jpg" alt="tu片" class="f">
+
+<div class="d"></div>
+
+<!--图片案例-->
+<img src="../images/1.jpg" alt="tu片" class="aa">
+<img src="../images/2.jpg" alt="tu片" class="bb">
+<img src="../images/3.jpg" alt="tu片" class="cc">
+<img src="../images/4.jpg" alt="tu片" class="dd">
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border: none;
+            color: white;
+            font-size: 30px;
+        }
+        /*表示按钮被禁用的时候显示*/
+        button:disabled {
+            /*这个时透明度 表示40%的透明度*/
+            opacity: .4;
+        }
+
+        /*表单被选择的伪类选择器*/
+        /*这个表示选择后，下一个的兄弟进行变色*/
+        input:checked+label {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--表单伪类时针对表单的-->
+<button disabled>注册</button>
+<br>
+
+
+<input type="checkbox" id="agree"><label for="agree">同意注册协议</label>
+</body>
+</html>

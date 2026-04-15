@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        /*1. [属性] 表示匹配指定的元素*/
+        /*a[class] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*2. [属性=值] 表示匹配等于的值的元素*/
+        /*a[class="a"] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*3. [属性^=值] 表示以指定开头的元素*/
+        /*a[class^='a'] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*4. [属性$=值] 表示以指定结束的元素*/
+        /*a[class$='b'] {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*5. [属性*=值] 表示任意位置指定的字串*/
+        a[class*='a'] {
+            color: red;
+        }
+
+        input[type='text'],
+        input[type='checkbox'] {
+            outline: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!--属性选择器是什么？
+    用于表单样式控制
+    图标字体控制
+    国际化语言适配等等
+-->
+<a href="#">修改字体颜色</a>
+<a href="#" class="a">修改字体颜色</a>
+<a href="#" class="ab">修改字体颜色</a>
+<a href="#" class="cb">修改字体颜色</a>
+<a href="#" class="mad">修改字体颜色</a>
+
+<input type="text">
+<input type="radio">
+<input type="checkbox">
+<input type="password">
+</body>
+</html>

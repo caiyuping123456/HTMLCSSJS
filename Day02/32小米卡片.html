@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ccc;
+        }
+        .card {
+            height: 300px;
+            width: 234px;
+            background-color: #fff;
+            margin: 0 auto;
+            /*这个会被继承到子类*/
+            text-align: center;
+            transition: .3s;
+        }
+
+        .card img {
+            margin-top: 20px;
+            /*padding-top: 20px;*/
+            height: 160px;
+            width: 160px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+        }
+
+        .card .desc {
+            font-size: 12px;
+            color: #b0b0b0;
+            /*单行溢出显示省略号*/
+            /*溢出表示隐藏*/
+            overflow: hidden;
+            /*表示溢出显示省略号*/
+            text-overflow: ellipsis;
+            /*强制文本一行显示*/
+            white-space: nowrap;
+            /*background-color: green;*/
+            margin: 0 10px;
+        }
+
+        .card .price {
+            font-size: 14px;
+            color: #b0b0b0;
+            margin-top: 10px;
+        }
+        .card span {
+            color: #ff6700;
+        }
+        .card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,1);
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <img src="../images/2.jpg" alter="二级" title="erji">
+    <h3 class="title">XiaoMi Buds</h3>
+    <p class="desc">这是一个小米的耳机，快来用用吧jfodfjdifjdf</p>
+    <p class="price">
+<!--        必须只用行内元素-->
+        <span>659元</span>
+        <del>699元</del>
+    </p>
+</div>
+</body>
+</html>

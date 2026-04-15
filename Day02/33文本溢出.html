@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a {
+            width: 100px;
+            height: 70px;
+            /*单行文本省略*/
+            /*overflow: hidden;*/
+            /*text-overflow: ellipsis;*/
+            /*white-space: nowrap;*/
+
+            /*强制允许单词内部换行*/
+            word-break: break-all;       /* 1. 强制允许单词内部换行（解决长英文不换行问题） */
+            display: -webkit-box;        /* 2. 设置为弹性盒子模型 */
+            -webkit-box-orient: vertical;/* 3. 设置盒子方向为垂直方向 */
+            -webkit-line-clamp: 3;       /* 4. 限制最多显示 3 行 */
+            overflow: hidden;            /* 5. 隐藏超出部分 */
+            text-overflow: ellipsis;     /* 6. 溢出内容用省略号(...)表示 */
+        }
+    </style>
+</head>
+<body>
+<!--多行显示要设置为行数的高度-->
+<div class="a">
+    jifhidfidfidfidhfidfiahfafagfuyafugaufygauydfgdyugffff
+    fffffffffffffffffffffffffff ffffffffffffffffffff
+    fffffffffffffffffffffffffffff fffffff
+    fffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffff fffffff
+    fffffffffffffff ffffffff
+</div>
+</body>
+</html>

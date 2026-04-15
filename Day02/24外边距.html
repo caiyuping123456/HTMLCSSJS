@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+        .b {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+        .c {
+        /*    使用margin进行居中*/
+        /*    只要左右auto就可以居中了*/
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .father {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*    为父亲添加上边框*/
+            /*border: 1px solid;*/
+
+            /*为父亲添加上内边距*/
+            /*padding-top: 10px;*/
+
+            overflow: hidden ;
+        }
+        .son {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<!--
+    外边距就是盒子和盒子的距离,使用margin,也是顺时针
+    对于行内盒子的上下不生效,左右会生效
+    对于行内盒子居中,可以使用块级盒子进行嵌套
+
+    块级盒子的上下外边距的折叠问题,比如上表示150 下表示50,实际就是150,以最大的为准
+
+    外边距塌陷问题:
+
+-->
+<div class="a">
+    这是第一个盒子
+</div>
+<div class="b">
+    这是第一个盒子
+</div>
+
+<div class="c">
+    这是第一个盒子
+</div>
+
+<!--模拟高度塌陷-->
+<!--解决:
+        为父亲添加上边框
+        为父亲添加上内边距(建议)
+        为父亲添加overflow: hidden属性
+    -->
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>
