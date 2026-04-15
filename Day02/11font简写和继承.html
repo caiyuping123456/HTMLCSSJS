@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      /*
+        也就是说可以在font中声明多个字体属性
+            语法顺序：[font-style] [font-weight] font-size/line-height font-family
+            font-size和font-family是必须的
+      */
+      .f {
+        background-color: green;
+          font: bold 20px/1.5 "Microsoft YaHei", sans-serif;
+      }
+      .d {
+          color: red;
+      }
+
+    </style>
+</head>
+<body>
+<p class="f">量子计算机的运算能力源于量子叠加和量子纠缠两大核心特性。量子叠加允许一个量子比特同时处于0和1的状态，使得N个量子比特可以同时存储2^N个数据；而量子纠缠则使得多个量子比特之间存在非定域的关联，一个量子比特的状态改变会瞬间影响与其纠缠的其他量子比特。这种特性让量子计算机能够以指数级并行的方式处理信息，从而在特定算法上展现出远超经典超级计算机的算力。</p>
+
+<!--继承
+自己是优先父亲（就近原则）
+-->
+<div class="d">
+    <p>我是儿子</p>
+</div>
+</body>
+</html>

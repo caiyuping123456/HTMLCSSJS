@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*这个就是后代选择器*/
+        .a p {
+            color: red;
+        }
+        ul li {
+            color: green;
+        }
+
+        /*这个就是子代选择器 自会选儿子*/
+        .b > span {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--这个是后代选择器-->
+<div class="a">
+    <p>1儿子</p>
+    <p>2儿子</p>
+    <p>3儿子</p>
+    <p>4儿子</p>
+</div>
+<ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ul>
+<p>hahahah</p>
+
+<!--这个是自带选择器-->
+<div class="b">
+    <span>我是儿子1</span>
+    <p>
+        <span>我是孙子</span>
+    </p>
+</div>
+
+</body>
+</html>
