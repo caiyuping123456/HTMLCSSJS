@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box1 {
+            width: 100px;
+            /*注意，不用为父亲设置高度，不然会被撑开*/
+            height: 400px;
+            background-color: pink;
+            display: flex;
+            /*强制换行*/
+            flex-wrap: wrap;
+            /*父控子*/
+            /*注意，一定要加弹性布局，不然不生效*/
+            justify-content: flex-start;
+            align-content: space-between;
+
+        }
+        .box1 > * {
+            width: 20px;
+            height: 40px;
+            background-color: red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+        align-content定义交叉轴对齐方式（x轴）
+            1. flex-start表示左对齐（默认）
+            2. flex-end表示右对齐
+            3. center表示居中对齐
+            4. space-between表示两侧对齐
+            5. space-around表示两侧对齐
+            6. space-evenly表示均匀对齐
+-->
+<div class="box1">
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+
+
+</div>
+</body>
+</html>

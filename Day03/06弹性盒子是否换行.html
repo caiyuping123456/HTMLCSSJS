@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box1 {
+            width: 100px;
+            /*注意，不用为父亲设置高度，不然会被撑开*/
+            /*height: 400px;*/
+            background-color: pink;
+            display: flex;
+            /*强制换行*/
+            flex-wrap: wrap;
+            /*父控子*/
+            /*注意，一定要加弹性布局，不然不生效*/
+            justify-content: flex-start;
+        }
+        .box1 > * {
+            width: 20px;
+            height: 40px;
+            background-color: red;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+        flex-wrap表示是否换行：
+            1. nowrap表示不换行（默认）
+            2. wrap表示换行
+            3. wrap-reverse表示换行同时反转
+-->
+<div class="box1">
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+</div>
+</body>
+</html>

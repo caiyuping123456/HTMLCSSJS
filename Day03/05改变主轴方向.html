@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            /*设置了这个可以设置行级元素的高度等和大小*/
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            justify-content: space-between;
+        }
+        .box1 > * {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+        可以通过flex-direction进行主轴方向的改变
+            1. row表示水平
+            2. column表示竖直
+            3. row-revers表示水平反向
+            4. column-revers表示竖直反向
+
+-->
+<div class="box1">
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+</div>
+</body>
+</html>

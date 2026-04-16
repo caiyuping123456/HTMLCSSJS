@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a {
+            width: 320px;
+            height: 600px;
+            background-color: pink;
+        }
+        .a li {
+            float: left;
+            width: 100px;
+            height: 80px;
+            background-color: green;
+            list-style: none;
+            margin-right: 10px;
+        }
+        .a li:last-child {
+            margin-right: 0px;
+        }
+    </style>
+</head>
+<body>
+<!--
+        浮动可以脱离文档流，直到碰到父容器或者浮动容器
+        left: 左浮动
+        reght： 右浮动
+        none：不浮动
+
+        这个会影响布局，影响其他的布局（父亲没有高度）
+
+        解决：
+                1. 可以使用额外标签
+                2. 通过伪元素(块级)进行消除 ：就是给父亲添加一个内容 clear both
+                3. 双伪元素进行消除
+                4. 父亲中使用overflow hidden
+
+-->
+<div class="a">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</div>
+</body>
+</html>

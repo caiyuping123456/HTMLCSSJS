@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>负margin终极演示</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* 父容器：固定宽度，方便看对比 */
+        .container {
+            width: 200px;
+            border: 2px solid blue;
+            margin: 20px;
+        }
+        /* 普通flex布局：有问题版（两边凹进去） */
+        .normal {
+            display: flex;
+            background: pink;
+        }
+        /* 淘宝负margin版：完美版（左右贴满） */
+        .taobao {
+            display: flex;
+            background: green;
+            /* 父盒子 负margin！ */
+            margin: 0 -10px;
+        }
+        /* 子元素：左右加内边距 */
+        .item {
+            flex: 1;
+            height: 50px;
+            padding: 0 10px; /* 关键：左右各10px空隙 */
+        }
+        .content {
+            width: 100%;
+            height: 100%;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<h3>❌ 普通版：左右凹进去（没加负margin）</h3>
+<div class="container">
+    <div class="normal">
+        <div class="item"><div class="content"></div></div>
+        <div class="item"><div class="content"></div></div>
+    </div>
+</div>
+
+<h3>✅ 淘宝版：左右贴满（父盒子加了 margin:-10px）</h3>
+<div class="container">
+    <div class="taobao">
+        <div class="item"><div class="content"></div></div>
+        <div class="item"><div class="content"></div></div>
+    </div>
+</div>
+
+</body>
+</html>

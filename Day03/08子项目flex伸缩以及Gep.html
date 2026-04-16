@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 200px;
+            background-color: pink;
+            display: flex;
+
+        }
+        .box1 .item {
+            /*注意这个要写到item中*/
+            /*这个表示每个小盒子都是一份,和height没有关系*/
+            flex: 1;
+            width: 30px;
+            height: 50px;
+            background-color: red;
+            margin-left: 10px;
+        }
+        .box1 .item:nth-child(odd) {
+            background-color: green;
+        }
+
+        .box2 {
+            width: 200px;
+            background-color: pink;
+            display: flex;
+            /*注意gap里面不能写内容*/
+            gap: 10px;
+            margin: 0 auto;
+        }
+
+        .box2 .item {
+            flex: 1;
+            width: 30px;
+            height: 50px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+        项目属性:
+            子元素的属性控制自身的尺寸,顺序和对齐方式
+            语法: flex:1表示找几份
+            自由伸缩,使用的剩余空间进行分配的
+            同时呢,如何加了marign不会不会将盒子挤下来,是利用剩余空间进行的
+
+            1. flex-grow表示按甚于空间进行放大
+            2. flex-shrink表示剩余空间进行分配缩小比率
+            3. flex-basis表示定义项目在主轴上的初始大小(默认auto)
+            4. flex
+            5. align-self表示覆盖容器的align-items,单独定义某个项目的交叉轴对齐方式
+            6. order 表示定义项目的排序方式,
+
+            使用gep进行定义行和列的间隙
+            注意,gap要设置在父亲上
+
+-->
+<div class="box1">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+<br>
+<div class="box2">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+</body>
+</html>

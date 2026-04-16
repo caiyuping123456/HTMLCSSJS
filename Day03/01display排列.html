@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    ul,li {
+      list-style: none;
+    }
+
+
+    .a {
+      width: 250px;
+      height: 360px;
+      background-color: gray;
+      margin: 100px auto;
+      padding: 20px 0;
+    }
+    .a ul li a {
+      /*把链接转为块*/
+      margin-left: 10px;
+      display: block;
+      text-decoration: none;
+      height: 42px;
+      line-height: 42px;
+      color: #ffffff;
+    }
+    .a ul li a:hover {
+      background-color: #ff6700;
+    }
+  </style>
+</head>
+<body>
+<!--
+    正常布局：
+      1. 行内
+      2. 块级
+      3. 文档
+  -->
+
+<!--
+    这里使用的display模式:
+          1. dispaly:block表示转为区块
+          2. dispaly:inlone表示转为行内元素
+          3. dispaly:inline-block表示转为行区块
+
+    display: block	独占一行 (强制换行)	有效 (可随意控制宽高)	页面大结构 (如导航栏、侧边栏、文章段落)
+    display: inline	不换行 (与其他元素并排)	无效 (宽高由内容撑开)	文本修饰 (如文字变色、加粗、行内链接)
+    display: inline-block	不换行 (与其他元素并排)	有效 (可随意控制宽高)	既要在同一行，又要设宽高 (如按钮、图标、导航菜单项)
+
+
+    display: inline-block可以把父亲的字符转为0,就可以进行没有缝隙
+-->
+
+
+<!--小米案例-->
+<div class="a">
+  <ul>
+    <li><a href="#">手机</a></li>
+    <li><a href="#">平板</a></li>
+    <li><a href="#">电脑</a></li>
+    <li><a href="#">家电</a></li>
+    <li><a href="#">手表</a></li>
+    <li><a href="#">儿童和妇女</a></li>
+    <li><a href="#">电源配件</a></li>
+  </ul>
+</div>
+</body>
+</html>

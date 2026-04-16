@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box1 {
+            width: 100px;
+            height: 40px;
+            background-color: pink;
+            display: flex;
+            /*父控子*/
+            /*注意，一定要加弹性布局，不然不生效*/
+            justify-content: space-evenly;
+        }
+        .box1 > * {
+            width: 20px;
+            height: 40px;
+            background-color: red;
+        }
+
+        .box2 {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box2 > * {
+            width: 20px;
+            height: 40px;
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--
+        justify-content定义主轴对齐方式（x轴）
+            1. flex-start表示左对齐（默认）
+            2. flex-end表示右对齐
+            3. center表示居中对齐
+            4. space-between表示两侧对齐
+            5. space-around表示两侧对齐
+            6. space-evenly表示均匀对齐
+
+        align-items表示定义交叉轴上的对齐方式 （y轴）
+            1. flex-start表示起点对齐（默认）
+            2. flex-end表示终点对齐
+            3. center表示居中对齐
+            4. stretch表示项目拉伸到容器的高度
+-->
+<div class="box1">
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+</div>
+
+<div class="box2">
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+</div>
+</body>
+</html>
