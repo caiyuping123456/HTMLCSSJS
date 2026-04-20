@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            background-color: pink;
+            height: 100px;
+            width: 100px;
+            /*这个是固定定位*/
+            position: fixed;
+            left: 10px;
+            bottom: 30px;
+        }
+
+        .back {
+            background-color: red;
+            position: fixed;
+            right: 0;
+            bottom: 20px;
+        }
+
+        p {
+            background-color: green;
+            height: 20px;
+            margin-top: 10px;
+
+        }
+
+        p:hover {
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--
+        固定定位同样是一种脱离文档流的，是相对于浏览器视口进行定位的
+            这个适合作为固定导航栏的
+
+-->
+<div class="body">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+</div>
+<div class="box">
+
+</div>
+<div class="back">
+    返回顶部
+</div>
+</body>
+</html>

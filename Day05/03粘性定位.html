@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav {
+            width: 1000px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px auto;
+            /*这个就是粘性定位*/
+            position: sticky;
+            top: 0;
+        }
+        .main {
+            height: 2000px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--
+        粘性定位是一种混合定位
+        结合了相对定位和固定定位的特征
+        使用场景：吸顶效果和表头表格固定
+        必须使用方向的一个，不然会失效
+        相对于父亲视口的
+-->
+<div class="nav">我是导航部分</div>
+<div class="main"></div>
+</body>
+</html>

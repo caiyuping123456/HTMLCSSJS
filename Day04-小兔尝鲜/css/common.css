@@ -1,0 +1,191 @@
+
+/*这个是写公共样式的*/
+.w {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/*头部*/
+.shortcut {
+    height: 52px;
+    background-color: #333333;
+}
+.shortcut ul {
+    display: flex;
+    height: 52px;
+    /*主轴居中*/
+    justify-content: flex-end;
+    /*垂直居中*/
+    align-items: center;
+}
+.shortcut li a{
+    color: #FFFFFF;
+}
+.shortcut li a:hover {
+     color: #5EB69C ;
+ }
+.shortcut .line {
+    width: 1px;
+    height: 12px;
+    background-color: #999999;
+    margin: 0 15px;
+}
+.shortcut li:first-child a{
+    color: #5EB69C ;
+}
+
+/*头部*/
+.heard {
+    height: 132px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heard .logo {
+    width: 200px;
+    height: 88px;
+}
+.heard .logo h1 {
+    width: 100%;
+    height: 100%;
+}
+.heard .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*设置图片*/
+    background: url("../images/logo.png") no-repeat;
+    /*这个就是用于标记的，让浏览进行知道，同时直接裁剪不让用户看到*/
+    text-indent: -999px;
+    overflow: hidden;
+}
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav li a {
+    display: block;
+    height: 40px;
+    /*当 line-height 的值等于盒子的高度（height）时，单行文字就会垂直居中。*/
+    line-height: 40px;
+    text-align: center;
+}
+.nav li a:hover {
+    color: #5EB69C;
+    border-bottom: 2px solid #5EB69C;
+}
+.search {
+    background-color: pink;
+}
+.search input {
+    width: 170px;
+    height: 40px;
+    border-bottom: 2px solid #F4F4F4;
+    padding-left: 28px;
+}
+.search input::placeholder {
+   font-size: 16px;
+    color: #cccccc;
+}
+.card i {
+    font-size: 40px;
+    margin-right: 15px;
+}
+.footer {
+    height: 580px;
+    background-color: #F5F5F5;
+}
+.footer .sologan {
+    height: 178px;
+    border-bottom: 1px solid #E8E8E8;
+
+}
+.sologan ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 178px;
+}
+.sologan ul li{
+    display: flex;
+    align-items: center;
+}
+.sologan ul li h5{
+    width: 58px;
+    height: 58px;
+    background: url("../images/sprite.png");
+}
+.sologan ul li p{
+    font-size: 28px;
+    margin-right: 20px;
+    /*background: url("../images/sprite.png");*/
+}
+/*练习精灵图*/
+.sologan ul li .two{
+    background-position: 0 -58px;
+}
+.sologan ul li .three{
+    background-position: 0 -116px;
+}
+
+.sologan ul li .free{
+    background-position: 0 -174px;
+}
+.list {
+    display: flex;
+    gap: 84px;
+}
+.service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    /*background-color: pink;*/
+}
+.service .list dl dt {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.service .list dd {
+    margin-bottom: 10px;
+}
+
+.service .list dd a {
+    color: #969696;
+}
+.service .list dd a i {
+    color: #5EB69C;
+}
+.service-right ul {
+    display: flex;
+    text-align: center;
+}
+
+.service-right ul li {
+    margin-left: 55px;
+    color: #969696;
+}
+.service-right ul li p{
+    margin-top: 10px;
+}
+.copyright {
+    text-align: center;
+    margin-top: 100px;
+    line-height: 30px;
+    color: #A1A1A1;
+}
+.copyright p a {
+    color: #A1A1A1;
+}
+
+
+
+
+
+
+
+
+
+/*尾部*/

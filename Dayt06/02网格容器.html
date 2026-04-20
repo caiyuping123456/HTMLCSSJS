@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 320px;
+            height: 320px;
+            margin: 20px;
+            border: 1px solid red;
+            display: grid;
+            /*这个是定义行轨道*/
+            /* 3*3 */
+            /*这个是列*/
+            grid-template-columns: 20px 20px 20px;
+            /*这个是行*/
+            grid-template-rows: 20px 20px 20px;
+            /*
+               如果行数有好多：
+                        1. 不要设置行轨道
+                        2. 给子盒子设置高度
+            */
+            /*    进行两端对齐*/
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        .item {
+            background-color: pink;
+        }
+
+        .template {
+            display: grid;
+            grid-template-columns: 80px 80px 80px 80px 80px;
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid red;
+            justify-content: space-between;
+            gap: 7px;
+        }
+
+        .template div {
+            height: 50px;
+            width: 50px;
+            background-color: pink;
+            /*margin-bottom: 10px;*/
+        }
+    </style>
+</head>
+<body>
+<!--
+        这里使用display：grip（块级）或者display：inline-grip (行内)
+            对齐的语法和flex是一样的
+-->
+<div class="box">
+    <div class="item">
+        1
+    </div>
+    <div class="item">
+        2
+    </div>
+    <div class="item">
+        3
+    </div>
+    <div class="item">
+        4
+    </div>
+    <div class="item">
+        5
+    </div>
+    <div class="item">
+        6
+    </div>
+    <div class="item">
+        7
+    </div>
+    <div class="item">
+        8
+    </div>
+    <div class="item">
+        9
+    </div>
+    <div class="item">
+        10
+    </div>
+</div>
+
+<div class="template">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</div>
+</body>
+</html>
