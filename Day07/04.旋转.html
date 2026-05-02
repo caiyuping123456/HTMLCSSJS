@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+        }
+        .box img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            transition: all .3s;
+            /*这个是设置中心点*/
+            transform-origin: left;
+        }
+
+        .box img:hover {
+            /*这个是相对图片中心点*/
+            transform: rotate(360deg);
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!--
+        注意，旋转不能用于行内元素
+-->
+<div class="box">
+    <img src="../images/1.jpg" alt="ttu">
+</div>
+</body>
+</html>

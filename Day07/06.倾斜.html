@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box .son {
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: pink;
+            /*倾斜角度*/
+            transform: skew(-16deg);
+        }
+        .box .card {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            margin-left: 200px;
+            border-radius: 0 20px 20px 20px;
+
+        }
+        .box .card .son1 {
+            width: 200px;
+            height: 400px;
+            position: absolute;
+            background-color: rgba(0,0,0,0.4) ;
+            border-radius: 0 20px 20px 20px;
+            transform-origin: top left;
+        }
+        .box .card .son1:hover {
+            transform: translateY(-3px);
+        }
+        .box .card .son2 {
+            width: 200px;
+            height: 400px;
+            position: absolute;
+            background-color: purple;
+            border-radius: 0 20px 20px 20px;
+            transform: skewY(8deg);
+            transform-origin: top left;
+        }
+        .box .card .son2:hover {
+            transform: skewY(20deg);
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+        倾斜可以使用：skew(角度，角度)
+
+-->
+<div class="box">
+    <div class="son">
+        英雄联盟
+    </div>
+    <div class="card">
+        <div class="son1">
+
+        </div>
+        <div class="son2">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

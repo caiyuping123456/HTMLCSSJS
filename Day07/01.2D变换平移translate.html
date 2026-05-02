@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box .son1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*过度动画*/
+            transition: all .3s;
+        }
+        .box .son1:hover {
+            transform: translateY(30px);
+        }
+        .box .son2 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--
+        2D坐标：X和Y轴
+        3D坐标：X,Y,Z
+
+        这里使用的translate
+            不破坏文档流
+            平移：translate(X,Y)
+            旋转：rotate(angle)
+            缩放：scale(sx,xy)
+            倾斜：skew(x-angle,y-angle)
+
+
+       translate使用场景：悬停元素微调和元素居中
+       优先使用这个
+
+       如果使用的百分比，是相对于自己的尺寸有关
+
+
+-->
+<div class="box">
+    <div class="son1">
+
+    </div>
+    <div class="son2">
+
+    </div>
+</div>
+</body>
+</html>

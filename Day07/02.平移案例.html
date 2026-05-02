@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            display: flex;
+            gap: 10px;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+        }
+        .box .item {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition: all .3ms;
+        }
+        .box .item:hover {
+            transform: translateY(30px);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+</body>
+</html>
