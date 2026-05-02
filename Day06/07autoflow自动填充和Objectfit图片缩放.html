@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            gap: 10px;
+            background-color: pink;
+            width: 630px;
+            height: 630px;
+            margin: 100px auto;
+            /*  这个是默认的排列方式  */
+            /*grid-auto-flow: row;*/
+            /*使用列排序*/
+            grid-auto-flow: column;
+        }
+        .box .item {
+            background-color: red;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .demo {
+            overflow: hidden;
+            display: grid;
+            /*两行三列*/
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,1fr);
+            grid-auto-flow: column;
+            max-width: 1760px;
+            height: 900px;
+            margin: 100px auto;
+            border-radius: 20px;
+            gap: 20px;
+        }
+        .demo .ls {
+            background-color: pink;
+        }
+        .demo .ls:first-child {
+            grid-row: 1 / 3;
+
+        }
+        .demo .ls:nth-child(3) {
+            /*注意要指定行 不然会进行上移动*/
+            grid-row: 2 / 3;
+            grid-column: 2 / 4;
+        }
+        .demo .ls img {
+            /*解决图片留白问题*/
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    使用grid-auto-flow可以决定网格容器中子元素排列填充方式
+        grid-auto-flow:row(默认)：表示使用行的方式进行填充
+        grid-auto-flow：column：表示使用列的方式填充
+
+        解决图片压缩问题
+            使用object-fit替换元素
+                fill表示默认值
+                contain表示适应缩放
+                cover表示固定缩放
+                同时可以搭配object-position进行控制对齐方式
+-->
+
+<div class="box">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+</div>
+
+<!--图片案例-->
+<div class="demo">
+    <div class="ls">
+            <img src="../images/1.jpg" alt="图片1">
+    </div>
+    <div class="ls">
+            <img src="../images/2.jpg" alt="图片1">
+    </div>
+    <div class="ls">
+            <img src="../images/3.jpg" alt="图片1">
+    </div>
+    <div class="ls">
+            <img src="../images/4.jpg" alt="图片1">
+    </div>
+</div>
+</body>
+</html>
