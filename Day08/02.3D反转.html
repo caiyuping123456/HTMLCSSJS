@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 1000px;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .box img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            transition: all .3s;
+        }
+
+        .box img:first-child:hover {
+            transform: rotateX(90deg);
+        }
+
+        .box img:nth-child(2):hover {
+            transform: rotateY(90deg);
+        }
+
+        .box img:nth-child(3):hover {
+            transform: rotateZ(90deg);
+        }
+
+        .box img:last-child:hover {
+            /*transform: rotate(40deg,90deg,80deg);*/
+        }
+    </style>
+</head>
+<body>
+<!--
+        3D旋转：
+            transform:rotate()/XYZ
+            就是围绕谁进行旋转
+
+-->
+<div class="box">
+    <!--    围绕X旋转-->
+    <img src="../images/1.jpg" alt="tup">
+    <!--    围绕Y旋转-->
+    <img src="../images/2.jpg" alt="tup">
+    <!--    围绕Z旋转-->
+    <img src="../images/3.jpg" alt="tup">
+    <!--    围绕X,Y,Z旋转-->
+    <img src="../images/4.jpg" alt="tup">
+</div>
+</body>
+</html>

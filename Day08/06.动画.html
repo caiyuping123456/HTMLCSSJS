@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*定义动画*/
+        /*这个是多个状态*/
+        /*@keyframes move {*/
+        /*    0% {*/
+        /*        transform: translateX(0);*/
+        /*    }*/
+        /*    100% {*/
+        /*        transform: translate(100px,100px);*/
+        /*    }*/
+        /*}*/
+
+        /*这个是表示两个状态*/
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translate(100px,100px);
+            }
+        }
+        /*使用动画*/
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*使用动画*/
+            animation: move 1s;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+        可以使用：animation来设置动画
+            可以使用关键帧设置动画
+            关键帧就是中间状态
+
+            定义动画：
+
+-->
+<div class="box"></div>
+</body>
+</html>

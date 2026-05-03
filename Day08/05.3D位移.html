@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 600px;
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .box > * {
+            position: absolute;
+        }
+
+        .beform {
+            width: 200px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            color: red;
+            background-color: pink;
+            transition: all .5s;
+            /*表示层级，默认是0，层级越大表示在上层*/
+            z-index: 1;
+            /*表示到后面就隐藏*/
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+
+        }
+        .beform h2 {
+            transform: translateZ(60px);
+            backface-visibility: hidden;
+        }
+
+        .box:hover .beform {
+            transform: rotateY(-180deg);
+        }
+
+        .after {
+            width: 200px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            color: green;
+            background-color: skyblue;
+            transform: rotateY(180deg);
+            transition: all .5s;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .after p {
+            width: 200px;
+            height: 20px;
+            transform: translateZ(60px);
+            /*转到后面要隐藏*/
+            backface-visibility: hidden;
+        }
+
+        .box:hover .after {
+            /*这个的意思就是最后到的角度*/
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+<!--
+        这个表示是3D平移函数
+        transform：translate（）XYZ
+        同样也是可以控制大小
+        需要开启立体空间
+        transform-style: preserve-3d
+-->
+<div class="box">
+    <div class="beform">
+        <h2>我是帅哥</h2>
+    </div>
+    <div class="after">
+        <p>人生自古谁不死</p>
+        <p>我是大帅哥</p>
+        <p>帅哥帅哥！！！</p>
+    </div>
+
+</div>
+</body>
+</html>

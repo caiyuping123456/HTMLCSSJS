@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translate(100px,100px);
+            }
+        }
+        /*使用动画*/
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*使用动画*/
+            animation: move 1s ease 0s infinite alternate none;
+        }
+    </style>
+</head>
+<body>
+<!--
+        这个表示的是动画的完整写法
+            animation: 动画名称 动画时长 曲线速度 延迟时间 播放次数（infinte） 播放方向 执行完毕状态
+                动画名称 动画时长是必须要写的
+                动画属性要写的目标元素中的
+
+                注意：amnition-play-stat要单独写
+-->
+<div class="box"></div>
+</body>
+</html>
