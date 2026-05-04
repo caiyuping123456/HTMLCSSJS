@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    引入组件-->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        #main {
+            width: 800px;
+            height: 800px;
+            margin: 100px auto;
+            /*background-color: pink;*/
+        }
+    </style>
+
+</head>
+<body>
+<div id="main"></div>
+<script>
+    // 1.初始化
+    const myChart = echarts.init(document.getElementById('main'));
+    // 2.配置项
+    const option = {
+        // 这个是标题
+        title: {
+            // 这个是标题的内容
+            text: '这个是标题',
+            // 这个是标题的位置
+            left: 'center',
+            // 这个是子标题
+            subtext: '单位：万元',
+            // 这个是调整位置的就是定位
+            top: '20px',
+            // 这个字体的样式
+            textStyle: {
+                fontSize: 18,
+                fontWeight: 'bold',
+            }
+        },
+        // 鼠标悬停提示
+        tooltip: {
+            trigger: 'axis' ,// 'item'（单个数据项）或 'axis'（整列）
+            axisPointer: {
+                type: 'cross'   // 'line' | 'shadow' | 'cross'
+            }
+        },
+        // 图例（用于切换 series）
+        legend: {
+            data: ['销售额（万元）'],
+            // 这个是调整位置的
+            bottom: 0,
+            right: 0
+        },
+        // 控制绘图区域边距（避免标签被裁剪）
+        // 就是调整绘图的大小
+        grid: {
+            left: '20%',
+            right: '20%',
+            bottom: '20%',
+            top: '20%',
+            containLabel: true   // 自动调整以包含坐标轴标签
+        },
+        // 坐标轴（适用于柱状图、折线图等）
+        xAxis: {
+            type: 'category',// 'category'（类目轴）或 'value'（数值轴）
+            data: ['1月', '2月', '3月']
+        },
+        yAxis: {
+            type: 'value',
+            name: '万元'
+        },
+        // 定义图表类型和数据
+        series: [{
+            name: '这个是数据提示',
+            type: 'bar',
+            data: [120, 200, 150],
+            // itemStyle: {
+            //     color: function(params) {
+            //         // 让 1 组数据也能循环使用全局 color
+            //         const colorList = ['#5470C6', '#91CC75', '#FAC858', '#EE6666'];
+            //         return colorList[params.dataIndex];
+            //     }
+            // },
+            label: {
+                show: true,
+                position: 'top'
+            }
+        },
+            { name:'利润',   type:'bar', data:[80,90,100] }
+        ],
+        // 全局的配色
+        color: ['#5470C6', '#91CC75', '#FAC858', '#EE6666'],
+        // 右上角工具栏
+        toolbox: {
+            // 工具栏 整体位置
+            right: 10,  // 距离图表**右侧** 10 像素
+            top: 5,     // 距离图表**顶部** 5 像素
+            // 工具栏功能（里面写你要哪些按钮）
+            feature: {
+                // 1. 保存为图片按钮
+                saveAsImage: {
+                    type: 'png',      // 保存的图片格式：png（也可以用 jpg）
+                    name: '销售报表',  // 保存到电脑时的**默认文件名**
+                    pixelRatio: 2     // 图片清晰度：2 代表高清（1 是普通，越大越清晰）
+                },
+
+                // 2. 区域缩放按钮（框选放大图表）
+                dataZoom: {
+                    yAxisIndex: 'none'  // 只缩放**横向X轴**，不缩放纵向Y轴（最常用、最好用）
+                },
+
+                // 3. 重置按钮（点一下回到图表初始状态）
+                restore: {}
+            }
+        }
+    };
+
+    // 6. 使用配置项渲染图表
+    myChart.setOption(option);
+
+    // 可选：窗口大小改变时自动重绘图表
+    window.addEventListener('resize', () => {
+        myChart.resize();
+    });
+</script>
+</body>
+</html>
