@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 600px;
+            height: 600px;
+            background-color: red;
+            text-align: center;
+            line-height: 600px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    1
+</div>
+<script>
+    let id =document.getElementById("box")
+    //方式1：使用this暂存this
+    // id.addEventListener("click",function (){
+    //     let _this = this
+    //     setTimeout(function (){
+    //         _this.style.background = "pink"
+    //     },2000)
+    // })
+    //方法2：使用一个箭头函数
+    id.addEventListener("click",function (){
+        setTimeout(()=>{
+            this.style.background = "pink"
+        },2000)
+    })
+
+    //案例2：简化一个function方法
+    let arr = [1,2,3,4,5,6,7,8]
+    const map = arr.filter(temp => temp % 2 === 0).map(temp => temp * 2);
+    console.log(map)
+
+</script>
+</body>
+</html>
