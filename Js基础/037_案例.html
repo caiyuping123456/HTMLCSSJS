@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<script>
+    const elementById = document.getElementById("box");
+    let opacity = 1;
+    let fadingOut = true;  // true=淡出，false=淡入
+    let timer = null;
+
+    function animate() {
+        timer = setInterval(function() {
+            if (fadingOut) {
+                opacity -= 0.05;
+                if (opacity <= 0) {
+                    opacity = 0;
+                    fadingOut = false;  // 改为淡入
+                }
+            } else {
+                opacity += 0.05;
+                if (opacity >= 1) {
+                    opacity = 1;
+                    fadingOut = true;   // 改为淡出
+                }
+            }
+            elementById.style.opacity = opacity;
+        }, 50);  // 50ms 一帧，更流畅
+    }
+
+    animate();
+</script>
+</body>
+</html>

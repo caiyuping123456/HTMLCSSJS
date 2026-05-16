@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM获取元素</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            margin: 0 auto;
+            margin-top: 100px;
+            gap: 10px;
+        }
+
+        .box .son1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: green;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        .box .son1 p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box" id="root">Hello</div>
+
+<script>
+    //打印id
+    const elementById = document.getElementById("root");
+    console.log(elementById.id)
+    //获取class
+    //这种可以进行修改CSS元素样式
+    console.log(elementById.className);
+
+    //添加删除，判断的
+    console.log(elementById.classList.add("mybox"));
+    console.log(elementById)
+    //判断是不是有
+    console.log(elementById.classList.contains("box"))
+
+    //读取
+    // console.log(elementById.innerHTML="哇哈哈哈哈")
+
+    //也是读取
+    console.log(elementById.innerText="xixixixi1")
+
+    //区别innerHTML和innerText
+    // innerHTML会识别标签
+    // innerText会识别一个String
+
+
+</script>
+</body>
+</html>

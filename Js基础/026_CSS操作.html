@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="box">
+</div>
+
+<script>
+    //1. 直接使用style元素进行操作页面元素
+    const elementsByName = document.getElementsByClassName("box");
+    // //第一个参数表示为哪个属性设置值
+    // //第二个参数表示里面的值是啥
+    // elementsByName[0].setAttribute(
+    //     'style',
+    //     "width:200px;height:200px;background:red;"
+    // )
+
+    //2. 使用元素节点进行设置（推荐建议）
+    // const style = document.querySelector('div').style;
+    // style.backgroundColor = 'red';
+    // style.border = '1px solid black';
+    // style.width = '100px'
+    // style.height = '100px'
+
+    //3. 使用cssText进行设置
+    // elementsByName[0].style.cssText = "width:200px;height:200px;background:red;"
+
+</script>
+</body>
+</html>

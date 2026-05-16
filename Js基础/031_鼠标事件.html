@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件完整案例</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 50px auto;
+            text-align: center;
+            line-height: 300px;
+            font-size: 20px;
+            user-select: none; /* 禁止文字选中，体验更好 */
+        }
+        .log {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 150px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">我是盒子，来操作我</div>
+<div class="log" id="log">事件日志：</div>
+
+<script>
+    // 获取元素
+    const box = document.querySelector('.box');
+    const logDiv = document.getElementById('log');
+
+    // 封装一个打印日志的函数，方便使用
+    function logEvent(msg) {
+        const p = document.createElement('p');
+        p.textContent = msg;
+        logDiv.appendChild(p);
+        logDiv.scrollTop = logDiv.scrollHeight; // 自动滚动到底部
+    }
+
+    // 1. 鼠标点击事件（左键单击）
+    box.onclick = function () {
+        logEvent('✅ onclick：鼠标点击了盒子');
+        box.style.backgroundColor = 'red';
+        box.textContent = '被点击了！';
+    };
+
+    // 2. 鼠标双击事件
+    box.ondblclick = function () {
+        logEvent('✅ ondblclick：鼠标双击了盒子');
+        box.style.backgroundColor = 'green';
+        box.textContent = '被双击了！';
+    };
+
+    // 3. 鼠标按下事件（任意键按下）
+    box.onmousedown = function () {
+        logEvent('✅ onmousedown：鼠标按下了');
+        box.style.transform = 'scale(0.95)'; // 按下缩小一点，有按压感
+    };
+
+    // 4. 鼠标松开事件（任意键松开）
+    box.onmouseup = function () {
+        logEvent('✅ onmouseup：鼠标松开了');
+        box.style.transform = 'scale(1)'; // 松开恢复大小
+    };
+
+    // 5. 鼠标移入事件（进入元素，含子元素）
+    box.onmouseover = function () {
+        logEvent('✅ onmouseover：鼠标移入了盒子');
+        box.style.backgroundColor = 'skyblue';
+    };
+
+    // 6. 鼠标移出事件（离开元素，含子元素）
+    box.onmouseout = function () {
+        logEvent('✅ onmouseout：鼠标移出了盒子');
+        box.style.backgroundColor = 'pink';
+        box.textContent = '我是盒子，来操作我';
+    };
+
+    // 7. 鼠标移动事件（在元素内移动）
+    box.onmousemove = function (e) {
+        // 这里加个判断，避免日志刷屏，只打印一次
+        if (!this.isMoveLog) {
+            logEvent('✅ onmousemove：鼠标在盒子里移动');
+            this.isMoveLog = true;
+        }
+        // 实时显示鼠标坐标
+        box.textContent = `X: ${e.offsetX}, Y: ${e.offsetY}`;
+    };
+
+    // 鼠标移出时重置移动日志标记
+    box.addEventListener('mouseout', () => {
+        box.isMoveLog = false;
+    });
+
+    // 8. 右键菜单事件（阻止默认右键菜单）
+    box.oncontextmenu = function (e) {
+        e.preventDefault(); // 阻止浏览器默认右键菜单
+        logEvent('✅ oncontextmenu：触发了右键菜单（已阻止默认菜单）');
+        box.style.backgroundColor = 'orange';
+        box.textContent = '右键被触发了！';
+    };
+</script>
+</body>
+</html>

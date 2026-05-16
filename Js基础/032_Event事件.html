@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .root {
+            height: 400px;
+            width: 400px;
+            background-color: gray;
+        }
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<button id="bt">
+    按钮
+</button>
+<div class="root" id="root">
+    <div class="box" id="box">
+
+    </div>
+</div>
+
+<script>
+ //Event.target返回当前事件的所在节点
+ // Event.type属性返回一个字符串，表示事件类型，事件的类型是再生成事件的时候，属性只读
+ //可以对这个进行修改
+ const elementById = document.getElementById("bt");
+ // elementById.onclick = function (event){
+ //     console.log(event.target)
+ //     console.log(event.type)// 表示点击类型
+ //     event.target.innerHTML = "ahahhahahah"
+ // }
+ /**
+  * 输出：<button id="bt">
+  *     按钮
+  * </button>
+  */
+
+ //Event.preventDefault表示取消浏览器对当前事件的默认行为
+ elementById.onclick = function (event){
+     event.preventDefault()//比如a跳转
+     console.log(event.target)
+     console.log(event.type)// 表示点击类型
+     event.target.innerHTML = "ahahhahahah"
+ }
+
+
+ let root = document.getElementById("root")
+ let box = document.getElementById("box")
+
+ //Event.stopPropagation  阻止事件冒泡(儿子上加)
+ //下面就是一个事件冒泡，也就是说点击儿子，儿子上面的都会触发
+ root.onclick = function () {
+     console.log("root")
+ }
+ box.onclick = function (e){
+     e.stopPropagation()
+     console.log("box")
+ }
+
+</script>
+</body>
+</html>

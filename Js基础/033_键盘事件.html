@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>键盘事件案例</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Microsoft YaHei', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    /* 案例1样式 */
+    .case1 {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .case1 h2 {
+      color: #333;
+      margin-top: 0;
+      border-left: 4px solid #667eea;
+      padding-left: 15px;
+    }
+
+    .display-area {
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .key-input {
+      padding: 12px 20px;
+      font-size: 16px;
+      width: 280px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .key-input:focus {
+      border-color: #667eea;
+    }
+
+    .key-display {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e8e8e8;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    /* 案例2样式 */
+    .case2 {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      min-height: 400px;
+    }
+
+    .case2 h2 {
+      color: #333;
+      margin-top: 0;
+      border-left: 4px solid #f093fb;
+      padding-left: 15px;
+    }
+
+    .control-box {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      position: relative;
+      border-radius: 8px;
+      transition: 0.05s linear;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .control-area {
+      position: relative;
+      height: 350px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      margin-top: 20px;
+      overflow: hidden;
+      border: 2px dashed #ccc;
+    }
+
+    .info-tip {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    /* 案例3样式 */
+    .case3 {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .case3 h2 {
+      color: #333;
+      margin-top: 0;
+      border-left: 4px solid #43e97b;
+      padding-left: 15px;
+    }
+
+    .submit-area {
+      text-align: center;
+    }
+
+    .submit-input {
+      padding: 12px 20px;
+      font-size: 16px;
+      width: 280px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      margin-right: 10px;
+    }
+
+    .submit-input:focus {
+      border-color: #43e97b;
+    }
+
+    .submit-btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>⌨️ 键盘事件综合案例</h1>
+
+<!-- 案例1：显示按下的键 -->
+<div class="case1">
+  <h2>📌 案例1：实时显示按键</h2>
+  <div class="display-area">
+    <input type="text" class="key-input" placeholder="点击这里，然后按键盘...">
+    <div class="key-display" id="keyDisplay">等待按键...</div>
+  </div>
+</div>
+
+<!-- 案例2：方向键控制方块 -->
+<div class="case2">
+  <h2>🎮 案例2：方向键控制移动</h2>
+  <div class="control-area" id="controlArea">
+    <div class="control-box" id="controlBox"></div>
+  </div>
+  <div class="info-tip">
+    🎯 使用方向键 ↑ ↓ ← → 移动红色方块
+  </div>
+</div>
+
+<!-- 案例3：回车键提交 -->
+<div class="case3">
+  <h2>✅ 案例3：回车键快速提交</h2>
+  <div class="submit-area">
+    <input type="text" class="submit-input" id="submitInput" placeholder="输入内容后按回车键">
+    <button class="submit-btn" id="submitBtn">提交</button>
+    <div class="message" id="submitMessage"></div>
+  </div>
+</div>
+
+<script>
+  // ========== 案例1：监听按键并显示 ==========
+  const keyInput = document.querySelector('.key-input');
+  const keyDisplay = document.getElementById('keyDisplay');
+
+  // keydown：按下键盘时触发
+  keyInput.addEventListener('keydown', function(event) {
+    // 阻止事件冒泡，避免影响其他案例
+    event.stopPropagation();
+
+    const keyName = event.key === ' ' ? '空格' : event.key;
+    keyDisplay.innerHTML = `🔽 按下：${keyName}`;
+    keyDisplay.style.backgroundColor = '#ffcccc';
+    keyDisplay.style.color = '#d32f2f';
+  });
+
+  // keyup：松开键盘时触发
+  keyInput.addEventListener('keyup', function(event) {
+    event.stopPropagation();
+
+    const keyName = event.key === ' ' ? '空格' : event.key;
+    keyDisplay.innerHTML = `🔼 松开：${keyName}`;
+    keyDisplay.style.backgroundColor = '#ccffcc';
+    keyDisplay.style.color = '#2e7d32';
+
+    // 2秒后恢复提示
+    setTimeout(() => {
+      if (keyDisplay.innerHTML.includes('松开')) {
+        keyDisplay.innerHTML = '等待按键...';
+        keyDisplay.style.backgroundColor = '#e8e8e8';
+        keyDisplay.style.color = '#333';
+      }
+    }, 1500);
+  });
+
+  // ========== 案例2：方向键控制方块 ==========
+  const controlBox = document.getElementById('controlBox');
+  const controlArea = document.getElementById('controlArea');
+
+  let boxX = 0;
+  let boxY = 0;
+  const step = 15;
+
+  // 获取方块可移动的最大范围
+  function getMaxBounds() {
+    const areaRect = controlArea.getBoundingClientRect();
+    const boxRect = controlBox.getBoundingClientRect();
+    const maxX = areaRect.width - boxRect.width;
+    const maxY = areaRect.height - boxRect.height;
+    return { maxX, maxY };
+  }
+
+  // 更新方块位置
+  function updateBoxPosition() {
+    const { maxX, maxY } = getMaxBounds();
+    boxX = Math.max(0, Math.min(maxX, boxX));
+    boxY = Math.max(0, Math.min(maxY, boxY));
+    controlBox.style.position = 'absolute';
+    controlBox.style.left = boxX + 'px';
+    controlBox.style.top = boxY + 'px';
+  }
+
+  // 初始化方块位置
+  function initBoxPosition() {
+    const { maxX, maxY } = getMaxBounds();
+    boxX = maxX / 2;
+    boxY = maxY / 2;
+    updateBoxPosition();
+  }
+
+  // 监听键盘控制方块（只在案例2区域生效）
+  controlArea.addEventListener('keydown', function(event) {
+    // 只有方向键才处理
+    const arrowKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+    if (!arrowKeys.includes(event.key)) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    switch(event.key) {
+      case 'ArrowUp':
+        boxY -= step;
+        break;
+      case 'ArrowDown':
+        boxY += step;
+        break;
+      case 'ArrowLeft':
+        boxX -= step;
+        break;
+      case 'ArrowRight':
+        boxX += step;
+        break;
+    }
+
+    updateBoxPosition();
+  });
+
+  // 让 controlArea 可以获得键盘焦点
+  controlArea.setAttribute('tabindex', '0');
+  controlArea.style.outline = 'none';
+  controlArea.style.cursor = 'pointer';
+
+  // 点击区域时获得焦点，显示提示
+  controlArea.addEventListener('click', function() {
+    this.focus();
+    const tip = document.querySelector('.case2 .info-tip');
+    const originalText = tip.innerHTML;
+    tip.innerHTML = '✅ 区域已激活，现在可以使用方向键了！';
+    setTimeout(() => {
+      tip.innerHTML = originalText;
+    }, 1500);
+  });
+
+  // 窗口大小改变时重新计算位置
+  window.addEventListener('resize', function() {
+    initBoxPosition();
+  });
+
+  // 初始化方块
+  setTimeout(initBoxPosition, 100);
+
+  // ========== 案例3：回车键提交 ==========
+  const submitInput = document.getElementById('submitInput');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitMessage = document.getElementById('submitMessage');
+
+  // 监听回车键
+  submitInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      submitForm();
+    }
+  });
+
+  // 监听提交按钮
+  submitBtn.addEventListener('click', submitForm);
+
+  function submitForm() {
+    const value = submitInput.value.trim();
+
+    if (value === '') {
+      submitMessage.innerHTML = '⚠️ 请输入内容后再提交！';
+      submitMessage.style.backgroundColor = '#ffebee';
+      submitMessage.style.color = '#c62828';
+    } else {
+      submitMessage.innerHTML = `✅ 提交成功！您输入的内容是：「${value}」`;
+      submitMessage.style.backgroundColor = '#e8f5e9';
+      submitMessage.style.color = '#2e7d32';
+      submitInput.value = '';
+    }
+
+    // 3秒后自动清除消息
+    setTimeout(() => {
+      if (submitMessage.innerHTML !== '') {
+        submitMessage.innerHTML = '';
+      }
+    }, 3000);
+  }
+
+  // 全局提示：阻止页面因方向键滚动
+  window.addEventListener('keydown', function(event) {
+    const arrowKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+    if (arrowKeys.includes(event.key)) {
+      // 如果焦点不在 controlArea 上，不阻止默认行为（但也不影响控制区）
+      if (document.activeElement !== controlArea) {
+        // 提示用户点击控制区
+        const tip = document.querySelector('.case2 .info-tip');
+        tip.innerHTML = '💡 提示：请先点击上方灰色区域激活方向键！';
+        setTimeout(() => {
+          tip.innerHTML = '🎯 使用方向键 ↑ ↓ ← → 移动红色方块';
+        }, 2000);
+      }
+    }
+  });
+</script>
+</body>
+</html>

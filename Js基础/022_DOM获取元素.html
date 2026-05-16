@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM获取元素</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            margin: 0 auto;
+            margin-top: 100px;
+            gap: 10px;
+        }
+
+        .box .son1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: green;
+            line-height: 100px;
+            text-align: center;
+        }
+        .box .son1 p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="son1">
+        <p class="title1">1</p>
+        <p class="title1">a</p>
+        <p class="title1">b</p>
+        <p class="title1">c</p>
+    </div>
+    <div class="son1">
+        <p class="son2 title2">2</p>
+    </div>
+    <div class="son1">
+        <p class="title3">3</p>
+    </div>
+
+</div>
+<form name="login">
+</form>
+<p id="as">hahah</p>
+<script>
+// 可以使用document.getElementsByTagName()方法获取HTML标签名字，返回一个类似数组的对象实例
+const elementsByTagName = document.getElementsByTagName('p');
+console.log(elementsByTagName)
+
+//可以通过数组的方式获取到元素
+const elementsByTagNameElement1 = elementsByTagName[1];
+console.log(elementsByTagNameElement1)
+
+//可以进行修改元素
+elementsByTagNameElement1.innerHTML = "你好"
+
+//获取名字
+const elementsByClassName1 = document.getElementsByClassName("title3");
+console.log(elementsByClassName1[0])
+
+//可以获取两个class
+const elementsByClassName2 = document.getElementsByClassName("son2 title2");
+console.log(elementsByClassName2[0])
+
+//通过进行Name获取
+//常见就是表单
+const elementsByName = document.getElementsByName("login");
+console.log(elementsByName[0])
+
+//通过Id进行获取
+const elementById = document.getElementById("as");
+console.log(elementById)
+
+//也可以进行修改
+elementById.innerHTML = "heheh"
+
+//H5之后的
+//document.querySelector()接收一个CSS选择器，返回一个匹配这个选择器的元素节点，多个节点匹配就是放回第一个，没有的化就是null
+const element1 = document.querySelector(".title1");
+console.log(element1)
+
+//获取全部
+const element2 = document.querySelectorAll(".title1");
+console.log(element2)
+
+</script>
+</body>
+</html>

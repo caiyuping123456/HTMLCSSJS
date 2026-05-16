@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<button onclick="clientHandle()">
+    按钮
+</button>
+<script>
+    /**
+     *  1. HTML事件处理
+     *          缺点：Js和CSS没有分开
+     *  2. DOM0级事件处理
+     *          优点就额是：JS和CSS分开了，，缺点：事件会被覆盖
+     *  3. DOM2级事件处理
+     *          优点：可以添加多个不会覆盖，写起来麻烦
+     */
+
+    function clientHandle(){
+        console.log("点击了按钮")
+    }
+</script>
+</body>
+</html>

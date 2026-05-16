@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM获取元素</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            margin: 0 auto;
+            margin-top: 100px;
+            gap: 10px;
+        }
+
+        .box .son1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: green;
+            line-height: 100px;
+            text-align: center;
+        }
+        .box .son1 p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="son1">
+        <p class="title1">1</p>
+        <p class="title1">a</p>
+        <p class="title1">b</p>
+        <p class="title1">c</p>
+    </div>
+    <div class="son1">
+        <p class="son2 title2">2</p>
+    </div>
+    <div class="son1">
+        <p class="title3">3</p>
+    </div>
+
+</div>
+<form name="login">
+</form>
+<p id="as">hahah</p>
+
+<p class="qw"></p>
+<script>
+    /**
+     * 这里提供了三个进行创建元素：
+     *      1. createElement：这个表示创建标签
+     *      2. createTextNode
+     *      3. createAttribute
+     *
+     */
+    // 使用createElement生成一个p节点
+    let p = document.createElement("p")
+    console.log(p)
+
+    // 使用createTextNode创建文本信息
+    let text = document.createTextNode("我是文本")
+    console.log(text)
+    //使用appendChild放到容器中
+    p.appendChild(text)
+    console.log(p)
+
+    // 使用createAttribute创建属性
+    const attr = document.createAttribute("id");
+    attr.value = "root"
+    console.log(attr)
+    //加入到到标签
+    p.setAttributeNode(attr)
+    console.log(p)
+
+
+    // 显示到文本
+    const elementsByName = document.getElementsByClassName("qw");
+    console.log(elementsByName[0]);
+    //放入
+    elementsByName[0].appendChild(p)
+
+
+
+</script>
+</body>
+</html>
