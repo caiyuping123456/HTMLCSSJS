@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let game = {
+        name:"和平激怒",
+        type:"action",
+    }
+
+    //向对象种添加一个up down
+    // 1. 方法1
+    let method = {
+        up: Symbol(),
+        down: Symbol()
+    }
+
+    game[method.up] = function (){
+        console.log("我是up")
+    }
+
+    game[method.down] = function (){
+        console.log("我是down")
+    }
+
+    console.log(game);
+
+    //2. 方法2
+    let yuoxi = {
+        name: "狼人杀",
+        [Symbol("up")]:function (){
+            console.log("up")
+        },
+        [Symbol("down")]:function (){
+            console.log("down")
+        },
+
+    }
+    console.log(yuoxi)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    //1. 数组合并
+    const boys = ['xiaoming','xiaohong']
+    const girls = ['qiiq','chuyu']
+
+    //使用ES5特性
+    let temp1 = boys.concat(girls)
+    console.log(temp1)
+
+    //使用扩展运算
+    let temp2 = [...boys,...girls]
+    console.log(temp2)
+
+    //2. 数组克隆
+    //如果里面是一个引用属性，那就是一个浅层拷贝
+    const arr1 = [1,2,3]
+    const arr2 = [...arr1]
+    console.log(arr2)
+
+
+    //3. 将伪数组变为真数组
+    const elementsByTagName = document.getElementsByTagName("div");
+    const temp3 = [...elementsByTagName]
+    console.log(temp3)
+    //这里就可以使用数组方法了
+
+
+
+
+</script>
+</body>
+</html>
