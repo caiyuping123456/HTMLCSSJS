@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax测试</title>
+</head>
+<body>
+<script>
+    //原生的Ajax
+    const url = "https://api.apiopen.top/getJok"
+
+    // const xhr = new XMLHttpRequest()
+    // xhr.open('GET', url)
+    //
+    // //发送
+    // xhr.send();
+    //
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4) {
+    //         if (xhr.status >= 200 && xhr.status < 300) {
+    //             console.log('成功', xhr.responseText);
+    //         } else {
+    //             console.log(xhr.status)
+    //         }
+    //     }
+    // }
+
+    //使用Promise进行封装
+    let p = new Promise(function (resolve, reject){
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', url)
+
+        //发送
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve('成功'+ xhr.responseText);
+                } else {
+                    reject(xhr.status)
+                }
+            }
+        }
+    })
+
+    //指定回调
+    p.then(function(value){
+        console.log(value)
+    },function(reason){
+        console.log(reason)
+    })
+</script>
+</body>
+</html>

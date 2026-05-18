@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax测试</title>
+</head>
+<body>
+<script>
+    const p = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            reject("错了")
+        },1000)
+    })
+
+    p.then(value=>{
+        console.log(value)
+    },reason => {
+        console.log(reason)
+    })
+
+    //换一种方式,这个就是一个语法糖
+    p.catch(reason => {
+        console.error(reason)
+    })
+</script>
+</body>
+</html>
